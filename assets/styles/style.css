@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+
+/*------ General selector-----  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif !important;
+    background-color: var(--edusogno-background);
+}
+
+/* ------Utility selector-----  */
+
+/* color selector  */
+
+:root {
+    --edusogno-white: #ffffff;
+    --edusogno-black: #000000;
+    --edusogno-street: #cccccc;
+    --edusogno-background: #74DFD5;
+    --edusogno-ocean: #0057ff;
+    --edusogno-night-lavender: #134077;
+    --edusogno-midnight: #2d224c;
+}
+
+
+.cl_gray {
+    color: var(--edusogno-street);
+}
+
+
+/* dimension selector  */
+
+.vh_100 {
+    height: 100vh;
+    min-height: 100%;
+}
+
+.min_vh_100 {
+    min-height: 100vh;
+}
+
+
+/* Text selector */
+
+.weight_400 {
+    font-weight: 400;
+}
+
+.weight_700 {
+    font-weight: 700;
+}
+
+/* Container selector  */
+
+.main_container {
+    background-color: var(--edusogno-background);
+}
+
+
+/* -- HEADER -- */
+
+header {
+    z-index: 1000;
+    position: fixed;
+    height: 127px;
+    background-color: var(--edusogno-white);
+    border-radius: 0 0 13px 13px;
+    box-shadow: 0px 4px 18px -6px var(--edusogno-ocean);
+}
+
+header .logo_section {
+    max-width: 1440px;
+    margin: auto;
+}
+
+header .logo_section svg {
+    margin-left: 51px;
+}
+
+/* -- MAIN --*/
+
+
+/*MAIN BACKGROUND  */
+
+main {
+    min-height: calc(100vh - 127px);
+    height: calc(100% - 127px);
+    top: 127px;
+}
+
+main .background_container {
+    overflow-y: hidden;
+    margin: auto;
+    z-index: 0;
+
+}
+
+/* hills */
+
+.hills {
+    position: relative;
+}
+
+
+.white_plain {
+    right: 0;
+    min-width: 1440px;
+}
+
+.second_hill {
+    bottom: -20px;
+    margin: auto;
+    right: 0;
+    min-width: 1440px;
+}
+
+.third_hill {
+    bottom: 60px;
+    margin: auto;
+    right: 0;
+    min-width: 1440px;
+}
+
+
+/* planets */
+
+.small_planet {
+    width: 181px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    position: absolute;
+    right: 30px;
+    bottom: 370px;
+    background-color: var(--edusogno-white);
+}
+
+.big_planet {
+    z-index: 3;
+    width: 358px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    position: absolute;
+    left: -179px;
+    bottom: 320px;
+    background-color: var(--edusogno-white);
+}
+
+/* starship */
+
+.starship {
+    z-index: 5;
+    right: 193px;
+    bottom: 53px;
+}
+
+@media screen and (min-width: 1440px) {
+    .starship {
+        bottom: 4vw;
+    }
+}
+
+
+/*FORM SIGN IN AND LOG IN  */
+
+.form_container {
+    z-index: 999;
+    min-height: calc(100vh - 205px);
+    max-width: 1440px;
+    margin: auto;
+    padding: 20px;
+}
+
+.form_container h1 {
+    font-size: 32px;
+    color: var(--edusogno-night-lavender);
+}
+
+
+.form_container form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 19px;
+    border: 1px solid var(--edusogno-midnight);
+}
+
+
+.form_container form label {
+    font-weight: 700;
+    margin: 10px 0 0 0;
+    font-size: 13px;
+    color: var(--edusogno-midnight);
+}
+
+.form_container form input:not(#pasword) {
+    border: none;
+    margin: 10px 0;
+    border-bottom: 1px solid var(--edusogno-night-lavender);
+    outline: 0;
+    width: 100%;
+}
+
+#pasword {
+    border: none;
+    outline: 0;
+    width: 100%;
+}
+
+.form_container .pasword_container {
+    border-bottom: 1px solid var(--edusogno-night-lavender);
+    margin: 10px 0;
+}
+
+.form_container form button {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.form_container form .pasword_container button {
+    background-color: transparent;
+    border: none;
+}
+
+.form_container form a {
+    font-size: 13px;
+    color: var(--edusogno-black);
+}
+
+.form_container form a:hover {
+    color: var(--edusogno-night-lavender) !important;
+}
+
+
+/* EVENTS  */
+
+.single_event {
+    border-radius: 13px;
+    border: 1px solid var(--edusogno-night-lavender);
+}
