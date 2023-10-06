@@ -10,6 +10,6 @@
         die("Connessione fallita: " . $conn->connect_error);
     }
 
-    echo "Connessione riuscita";
+    echo "ok";
 
     $conn->close();
