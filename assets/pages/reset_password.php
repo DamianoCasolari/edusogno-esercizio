@@ -4,8 +4,6 @@ ini_set('display_errors', 1);
 
 session_start();
 
-var_dump($_SESSION['pasword_reset_email']);
-
 unset($_SESSION['logged_in']);
 
 if (isset($_SESSION['email'])) {
@@ -46,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         include('../db/database.php');
 
-
+        //hash pasword + update database
 
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
@@ -72,11 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-
-
-
-
-$title = "Edusogno - Log In";
+$title = "Edusogno - Reset Password";
 ob_start();
 ?>
 
@@ -106,7 +100,7 @@ ob_start();
                     RICHIEDI NUOVA PASSWORD
                 </button>
             </div>
-            <a class="btn btn-link text-decoration-none" href="./register.php">
+            <a class="w-100 btn btn-link text-decoration-none" href="./register.php">
                 Crea un nuovo <strong>Contatto</strong>
             </a>
     </form>

@@ -1,3 +1,5 @@
+<!-- MANCA L'INVIO DELL'EMAIL QUINDI SOLO DIMOSTRATIVO PER LE RESTANTI FUNZIONI  -->
+
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -22,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         include('../db/database.php');
 
-        // echo "ok";
+        //I check that the email is registered in the database
 
         $sql = "SELECT * FROM utenti WHERE email = ?";
         $stmt = $conn->prepare($sql);
@@ -44,10 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 
-
-
-
-$title = "Edusogno - Log In";
+$title = "Edusogno - Reset Password";
 ob_start();
 ?>
 <div class="form_container position-relative d-flex w-100  align-items-center flex-column p-md-3">
