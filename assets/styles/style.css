@@ -55,6 +55,10 @@ body {
     font-weight: 700;
 }
 
+.fs_12 {
+    font-size: 12px;
+}
+
 /* Container selector  */
 
 .main_container {
@@ -141,7 +145,28 @@ main .background_container {
     right: 30px;
     bottom: 370px;
     background-color: var(--edusogno-white);
+    /* animation: orbit 50s linear infinite; */
 }
+
+/* @keyframes orbit {
+    0% {
+        right: 30px;
+        bottom: 370px;
+    }
+
+    50% {
+        right: 700px;
+        bottom: 600px
+    }
+
+    100% {
+        right: 30px;
+        bottom: 370px;
+    }
+
+} */
+
+
 
 .big_planet {
     z-index: 3;

@@ -34,6 +34,7 @@
                 <?php
                 if (isset($_SESSION['email'])) {
                     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['logout'])) {
+
                         unset($_SESSION['logged_in']);
                         unset($_SESSION['email']);
                         unset($_SESSION['logout']);
@@ -43,8 +44,8 @@
                     }
 
                     echo '<form class="logout w-100 text-end" method="post" action="">
-                    <input class="fw-bold bg-transparent border-0" type="submit" name="logout" value="Log out">
-                </form>';
+                              <input class="fw-bold bg-transparent border-0" type="submit" name="logout" value="Log out">
+                          </form>';
                 }
                 ?>
             </div>

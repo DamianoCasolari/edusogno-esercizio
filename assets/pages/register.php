@@ -31,6 +31,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $form_warning_email = "Campo email obbligatorio.";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $form_warning_email = "Formato email non valido.";
+    } else {
+        include('../db/database.php');
+
+        $sql = "SELECT * FROM utenti WHERE email = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows == 1) {
+            $form_warning_email = "Indirizzo email già registrato";
+        };
+        $stmt->close();
+        $conn->close();
     }
 
     $password = htmlspecialchars(trim($_POST['password']), ENT_QUOTES, 'UTF-8');
@@ -58,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($password)) {
         $form_warning_password = "Campo password obbligatorio.";
     } elseif (!validatePassword($password)) {
-        $form_warning_password = "Il campo password deve essere lungo almeno 8 carratteri e contenere almeno una: <br> - lettera Maiusola <br>  - lettera minuscola <br> - un numero <br> - un carattere speciale";
+        $form_warning_password = "Il campo password deve essere lungo almeno 8 carratteri e contenere almeno una: <br> <span class='fs_12'>- lettera Maiusola <br>  - lettera minuscola <br> - un numero <br> - un carattere speciale </span> ";
     }
 
     // Check info in the form and submit info to databse
