@@ -199,7 +199,7 @@ main .background_container {
     color: var(--edusogno-midnight);
 }
 
-.form_container form input:not(#pasword) {
+.form_container form input:not(#password) {
     border: none;
     margin: 10px 0;
     border-bottom: 1px solid var(--edusogno-night-lavender);
@@ -207,13 +207,13 @@ main .background_container {
     width: 100%;
 }
 
-#pasword {
+#password {
     border: none;
     outline: 0;
     width: 100%;
 }
 
-.form_container .pasword_container {
+.form_container .password_container {
     border-bottom: 1px solid var(--edusogno-night-lavender);
     margin: 10px 0;
 }
@@ -223,7 +223,7 @@ main .background_container {
     font-size: 20px;
 }
 
-.form_container form .pasword_container button {
+.form_container form .password_container button {
     background-color: transparent;
     border: none;
 }
