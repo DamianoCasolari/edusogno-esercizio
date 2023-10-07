@@ -1,7 +1,3 @@
-<?php
-include('../db/database.php');
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +30,6 @@ include('../db/database.php');
                     <path d="M18.3242 22.1327L13.4602 20.395L9.38032 31.8148L14.2443 33.5525L18.3242 22.1327Z" fill="#2D224C" />
                     <path d="M27.8165 11.5998L24.6555 12.764L32.2426 33.3628L35.4035 32.1986L27.8165 11.5998Z" fill="#2D224C" />
                 </svg>
-
             </div>
         </header>
 
@@ -43,7 +38,6 @@ include('../db/database.php');
 
             <!-- BACKGROUND  -->
             <div class="background_container position-absolute h-100 w-100 ">
-
                 <!-- hills  -->
                 <img class="third_hill w-100 position-absolute" src="../img/Vector 5.png" alt="">
                 <img class="second_hill w-100 position-absolute " src="../img/Vector 4.png" alt="">
