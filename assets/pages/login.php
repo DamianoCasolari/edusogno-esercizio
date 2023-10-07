@@ -97,7 +97,7 @@ ob_start();
         <a class="btn btn-link" href="./register.php">
             Non hai ancora un profilo? <strong>Registrati</strong>
         </a>
-        <a class="btn btn-link text-decoration-none" href="./reset_password.php">
+        <a class="btn btn-link text-decoration-none" href="./password_change_request.php">
             Dimenticato la <strong>Pasword</strong>?
         </a>
     </form>
