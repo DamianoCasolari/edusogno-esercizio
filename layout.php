@@ -16,7 +16,7 @@
 
         <!-- HEADER  -->
         <header class=" d-flex w-100">
-            <div class="logo_section w-100">
+            <div class="logo_section w-100 d-flex justify-content-between align-items-center">
                 <svg width="124" height="53" viewBox="0 0 124 53" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M63.8578 17.1194V19.0764H50.9451C51.4423 18.6273 51.691 17.9536 51.691 16.6703V3.30044C51.691 2.02521 51.4423 1.35151 50.9451 0.894348H63.5851V2.87537C63.1359 2.40217 62.5585 2.1776 61.2592 2.1776H57.0405V8.4976H59.9599C60.7666 8.5749 61.5743 8.36158 62.2377 7.89608V10.3503C61.5743 9.8848 60.7666 9.67148 59.9599 9.74878H57.0405V17.8172H61.5158C62.7831 17.8172 63.3846 17.5926 63.8337 17.1194H63.8578Z" fill="#2D224C" />
                     <path d="M74.2841 19.0764L74.0836 16.927C73.6559 17.6722 73.0299 18.2841 72.2752 18.6948C71.5205 19.1054 70.6667 19.2986 69.8087 19.2529C67.1059 19.2529 64.9324 17.1756 64.9324 12.6522C64.9324 8.1287 67.4828 6.0354 70.0092 6.0354C70.8334 6.02315 71.6458 6.23163 72.3622 6.63919C73.0786 7.04676 73.673 7.63858 74.0836 8.35326V3.17214C74.1617 2.37543 73.9479 1.57745 73.482 0.926461C74.6771 0.854278 77.6045 0.653768 79.377 0.429199V16.8227C79.3126 17.6255 79.5374 18.4248 80.0106 19.0764H74.2841ZM74.0836 15.3791V9.92525C73.9664 9.56711 73.7387 9.25536 73.4332 9.03485C73.1277 8.81434 72.76 8.69645 72.3832 8.69814C71.2043 8.69814 70.6108 9.54829 70.5867 12.7083C70.5626 15.8683 71.2043 16.7185 72.3832 16.7185C72.7723 16.714 73.1492 16.5821 73.4563 16.3432C73.7634 16.1042 73.9837 15.7712 74.0836 15.3951V15.3791Z" fill="#2D224C" />
@@ -30,6 +30,23 @@
                     <path d="M18.3242 22.1327L13.4602 20.395L9.38032 31.8148L14.2443 33.5525L18.3242 22.1327Z" fill="#2D224C" />
                     <path d="M27.8165 11.5998L24.6555 12.764L32.2426 33.3628L35.4035 32.1986L27.8165 11.5998Z" fill="#2D224C" />
                 </svg>
+
+                <?php
+                if (isset($_SESSION['email'])) {
+                    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['logout'])) {
+                        unset($_SESSION['logged_in']);
+                        unset($_SESSION['email']);
+                        unset($_SESSION['logout']);
+
+                        header('Location: ./login.php');
+                        exit();
+                    }
+
+                    echo '<form class="logout w-100 text-end" method="post" action="">
+                    <input class="fw-bold bg-transparent border-0" type="submit" name="logout" value="Log out">
+                </form>';
+                }
+                ?>
             </div>
         </header>
 
@@ -37,7 +54,7 @@
         <main class="position-relative">
 
             <!-- BACKGROUND  -->
-            <div class="background_container position-absolute h-100 w-100 ">
+            <div class="background_container position-absolute h-100 w-100">
                 <!-- hills  -->
                 <img class="third_hill w-100 position-absolute" src="../img/Vector 5.png" alt="">
                 <img class="second_hill w-100 position-absolute " src="../img/Vector 4.png" alt="">
@@ -66,6 +83,7 @@
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

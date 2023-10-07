@@ -39,6 +39,7 @@ while ($stmt->fetch()) {
 };
 
 $stmt->close();
+$conn->close();
 
 // var_dump($eventi);
 
