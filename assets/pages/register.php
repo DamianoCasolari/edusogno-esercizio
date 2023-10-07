@@ -5,8 +5,13 @@ session_start();
 unset($_SESSION['logged_in']);
 
 if (isset($_SESSION['email'])) {
-    header('Location: ./dashboard.php');
-    exit();
+    if ($_SESSION['email'] == 'damianocasolari@gmail.com') {
+
+        header("Location: administrator.php");
+    } else {
+
+        header("Location: dashboard.php");
+    }
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

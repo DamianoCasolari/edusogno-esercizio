@@ -5,8 +5,13 @@ session_start();
 unset($_SESSION['logged_in']);
 
 if (isset($_SESSION['email'])) {
-    header('Location: ./dashboard.php');
-    exit();
+    if ($_SESSION['email'] == 'damianocasolari@gmail.com') {
+
+        header("Location: ./administrator.php");
+    } else {
+
+        header("Location: ./dashboard.php");
+    }
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -41,8 +46,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 $_SESSION['logged_in'] = true;
                 $_SESSION['email'] = $email;
+
+                if ($email == 'damianocasolari@gmail.com') {
+
+                    header("Location: administrator.php");
+                } else {
+
+                    header("Location: dashboard.php");
+                }
                 // var_dump($result);
-                header("Location: dashboard.php");
             } else {
                 $form_warning = "Credenziali non valide. Riprova.";
             }

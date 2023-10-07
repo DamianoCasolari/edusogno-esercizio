@@ -3,8 +3,15 @@
 session_start();
 
 
-if (isset($_SESSION['user_id'])) {
-    header("Location: ./assets/pages/dashboard.php");
+if (isset($_SESSION['email'])) {
+
+    if ($_SESSION['email'] == 'damianocasolari@gmail.com') {
+
+        header("Location: ./assets/pages/administrator.php");
+    } else {
+
+        header("Location: ./assets/pages/dashboard.php");
+    }
     exit();
 } else {
     header("Location: ./assets/pages/login.php");
