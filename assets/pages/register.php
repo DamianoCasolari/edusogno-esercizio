@@ -11,29 +11,29 @@ if (isset($_SESSION['email'])) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    //Validations
+    //Validations with sanification "htmlspecialchars" 
 
-    $nome = trim($_POST['nome']);
+    $nome = htmlspecialchars(trim($_POST['nome']), ENT_QUOTES, 'UTF-8');
     if (empty($nome)) {
         $form_warning_name = "Campo nome obbligatorio.";
     } elseif (strlen($nome) < 2) {
         $form_warning_name = "Il campo nome deve avere almeno 2 caratteri";
     }
-    $cognome = trim($_POST['cognome']);
+    $cognome = htmlspecialchars(trim($_POST['cognome']), ENT_QUOTES, 'UTF-8');
     if (empty($cognome)) {
         $form_warning_last_name = "Campo cognome obbligatorio.";
     } elseif (strlen($cognome) < 2) {
         $form_warning_last_name = "Il campo cognome deve avere almeno 2 caratteri";
     }
 
-    $email = trim($_POST['email']);
+    $email = htmlspecialchars(trim($_POST['email']), ENT_QUOTES, 'UTF-8');
     if (empty($email)) {
         $form_warning_email = "Campo email obbligatorio.";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $form_warning_email = "Formato email non valido.";
     }
 
-    $password = trim($_POST['password']);
+    $password = htmlspecialchars(trim($_POST['password']), ENT_QUOTES, 'UTF-8');
 
     // Function validation password 
 
