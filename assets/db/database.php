@@ -9,7 +9,3 @@
     if ($conn->connect_error) {
         die("Connessione fallita: " . $conn->connect_error);
     }
-
-    echo "ok";
-
-    $conn->close();
